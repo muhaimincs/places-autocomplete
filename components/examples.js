@@ -1,11 +1,9 @@
-import Clock from './clock'
-import Counter from './counter'
+import Autocomplete from './autocomplete'
 
 const Examples = () => {
   return (
     <div style={{ marginBottom: 10 }}>
-      <Clock />
-      <Counter />
+      <Autocomplete />
     </div>
   )
 }
