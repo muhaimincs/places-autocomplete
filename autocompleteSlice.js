@@ -1,4 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { delay, map } from 'rxjs/operators'
+import { of } from 'rxjs'
 
 const autocompleteSlice = createSlice({
   name: 'autocomplete',
@@ -28,5 +30,13 @@ export const {
   suggestionsLoad,
   suggestionUpdate,
 } = autocompleteSlice.actions
+
+export const epics = {
+  asyncCountUp: (action$, state$, action) =>
+    of([]).pipe(
+      delay(1000),
+      map(() => countUp())
+    )
+};
 
 export default autocompleteSlice.reducer
